@@ -24,7 +24,7 @@ export default function QuizCard({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.35 }}
-      className="w-full max-w-[897px] mx-auto"
+      className="w-full max-w-[897px] mx-auto relative"
     >
       {/* Question Box - Frame 2 specs: 896px x 78px, radius 10px, gradient, border, padding: 24px top/bottom, 277px left/right */}
       <div className="mb-6">
@@ -66,6 +66,8 @@ export default function QuizCard({
           )
         })}
       </div>
+
+      {/* paw moved to page-level container for correct corner positioning */}
     </motion.div>
   )
 }

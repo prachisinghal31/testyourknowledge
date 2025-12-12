@@ -121,6 +121,13 @@ export default function Home() {
               className="glass-effect rounded-[42px] p-12 shadow-2xl relative"
               style={{ width: '1542px', height: '856px' }}
             >
+              {/* Paw + bubble positioned at the white card corner for the first question */}
+              {!quizState.showResults && quizState.currentQuestion === 0 && (
+                <div className="page-paw-container pointer-events-none">
+                  <div className="speech-bubble">Best of Luck!</div>
+                  <img src="/paw.png" alt="paw" className="paw-image" />
+                </div>
+              )}
               {/* Header - Title specs: 919px x 102px, Top: 206px (relative to container: 206-112=94px), Left: 501px (relative: 501-189=312px) */}
               <div 
                 className="absolute flex items-center justify-center"
