@@ -13,182 +13,64 @@ A modern, interactive quiz application built with Next.js, TypeScript, and Tailw
 - **Score Display**: Final score screen with percentage calculation
 - **Smooth Animations**: Powered by Framer Motion for delightful user experience
 - **Accessibility**: WCAG 2.1 compliant with keyboard navigation and ARIA labels
-- **Responsive Design**: Optimized for desktop screens with modern UI/UX
-- **Type Safety**: Full TypeScript implementation for robust code
+# Test Your Knowledge — Quiz App
 
-## 🛠️ Tech Stack
+A small, desktop-focused quiz app built with Next.js, TypeScript and Tailwind CSS. It includes animated transitions (Framer Motion), keyboard accessibility, and a polished UI.
 
-### Required Technologies
-- **React 18.2.0**: Modern React with hooks
-- **TypeScript 5.3.3**: Type-safe development
-- **Next.js 14.0.4**: React framework with App Router
-- **Tailwind CSS 3.4.0**: Utility-first CSS framework
+## Quick Start
 
-### Bonus Technologies
-- **Framer Motion 10.16.16**: Smooth animations and transitions
+Prerequisites:
+- Node.js 18+ and npm
 
-## 📁 Project Structure
-
-```
-cat/
-├── app/
-│   ├── globals.css          # Global styles and Tailwind directives
-│   ├── layout.tsx           # Root layout component
-│   └── page.tsx             # Main quiz page
-├── components/
-│   ├── QuizCard.tsx         # Question and answer options component
-│   ├── ProgressIndicator.tsx # Progress bar component
-│   ├── NavigationButtons.tsx # Previous/Next/Submit buttons
-│   └── ScoreScreen.tsx      # Final score display component
-├── data/
-│   └── questions.ts         # Quiz questions data
-├── types/
-│   └── quiz.ts              # TypeScript type definitions
-├── package.json
-├── tsconfig.json
-├── tailwind.config.ts
-└── README.md
-```
-
-## 🏃 Getting Started
-
-### Prerequisites
-
-- Node.js 18.x or higher
-- npm or yarn package manager
-
-### Installation
-
-1. Clone the repository:
+Install and run:
 ```bash
 git clone <repository-url>
 cd cat
-```
-
-2. Install dependencies:
-```bash
 npm install
-```
-
-3. Run the development server:
-```bash
 npm run dev
 ```
+Open http://localhost:3000
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-### Build for Production
-
+Build for production:
 ```bash
 npm run build
-npm start
+npm run start
 ```
 
-## 🎨 Design Implementation
+## What’s in this repo
+- `app/` — Next.js App Router pages and global styles (`globals.css`, `page.tsx`, `layout.tsx`)
+- `components/` — UI components: `QuizCard`, `ProgressIndicator`, `NavigationButtons`, `ScoreScreen`
+- `data/questions.ts` — Quiz questions and answers
+- `public/` — Static assets (put `paw.png` here for the paw graphic)
 
-The application implements a pixel-perfect design with:
+## Notable behaviors
+- The progress indicator now stretches to match the question card width.
+- Answer options are white by default and reveal a gentle gradient on hover/selection.
+- The final score uses a rolling-digit animation (slot-style) when shown.
+- A paw graphic and "Best of Luck!" speech bubble appear at the card corner on the first question. Place your paw image as `public/paw.png`.
+- The main card animates its background to solid white on the results screen and back to glassy on restart.
 
-- **Color Palette**:
-  - Primary Teal: `#2C5F7C` (quiz-teal)
-  - Light Blue: `#E8F4F8` (quiz-light-blue)
-  - Medium Blue: `#B8D4E3` (quiz-blue)
-  - Purple Accent: `#A8B8D8` (quiz-purple)
+## Running & Developing
+- Dev server: `npm run dev`
+- Lint: `npm run lint` (if configured)
+- Formatting: `npm run format` (if configured)
 
-- **Typography**:
-  - Serif font (Georgia) for headings
-  - Sans-serif (Inter) for body text
+## Files you may want to edit
+- Edit questions: `data/questions.ts`
+- Styles: `app/globals.css`
+- Quiz UI: `components/QuizCard.tsx`
+- Results UI: `components/ScoreScreen.tsx`
 
-- **UI Elements**:
-  - Frosted glass effect on main card
-  - Rounded corners throughout
-  - Soft shadows and gradients
-  - Smooth hover and tap animations
+## Notes & Tips
+- If the paw graphic doesn't appear, add a `paw.png` to the `public/` folder (or update the `img` src in `app/page.tsx`).
+- The app is designed primarily for desktop screens — additional responsive tweaks are required for mobile.
 
-## ♿ Accessibility Features
-
-- **Keyboard Navigation**:
-  - Arrow keys (← →) for navigation
-  - Number keys (1-3) for answer selection
-  - Tab navigation for all interactive elements
-
-- **ARIA Labels**:
-  - Proper `role` attributes for buttons and radio options
-  - `aria-label` for screen readers
-  - `aria-pressed` for selected states
-  - `aria-live` regions for dynamic content
-
-- **Semantic HTML**:
-  - Proper heading hierarchy
-  - Button elements for all interactive components
-  - Progress indicators with proper attributes
-
-## 📝 Quiz Questions
-
-The application includes 4 questions:
-
-1. What sound does a cat make?
-2. What would you probably find in your fridge?
-3. How many stars are in the sky?
-4. What color are bananas?
-
-Questions and answers can be easily modified in `data/questions.ts`.
-
-## 🔧 Key Features Implemented
-
-1. **Question Navigation**: Move between questions with Previous/Next buttons
-2. **Answer Selection**: Click or use keyboard to select answers
-3. **Progress Tracking**: Visual indicator shows current progress
-4. **Score Calculation**: Automatic calculation of correct answers
-5. **Results Screen**: Beautiful score display with percentage
-6. **Restart Functionality**: Start Again button to retake the quiz
-7. **Smooth Transitions**: Page transitions and component animations
-8. **Responsive Layout**: Optimized for desktop viewing
-
-## 🎯 Assumptions Made
-
-1. **Desktop Only**: As per requirements, the design is optimized for desktop screens only
-2. **Question Format**: All questions are multiple-choice with 3 options
-3. **Navigation**: Users can navigate back and forth between questions before submitting
-4. **Answer Validation**: Users must select an answer before proceeding to the next question
-5. **Score Display**: Final score is shown as a percentage after completing all questions
-
-## ⏱️ Time Spent
-
-- Project Setup: 30 minutes
-- Component Development: 2 hours
-- Styling & Design Implementation: 2 hours
-- Accessibility Features: 1 hour
-- Testing & Refinement: 30 minutes
-- Documentation: 30 minutes
-
-**Total: ~6.5 hours**
-
-## 🚀 Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Import your repository in Vercel
-3. Vercel will automatically detect Next.js and configure the build
-4. Deploy!
-
-### Deploy to Netlify
-
-1. Push your code to GitHub
-2. Import your repository in Netlify
-3. Build command: `npm run build`
-4. Publish directory: `.next`
-5. Deploy!
-
-## 📄 License
-
-This project is created for assessment purposes.
-
-## 👤 Author
-
-[Your Name]
+If you want, I can also:
+- Add a placeholder paw image into `public/` for you
+- Make the rolling-digit animation spin multiple times before settling
+- Adjust spacing or colors to match a provided Figma spec
 
 ---
-
-**Note**: This application is built specifically for desktop screens as per the requirements. For mobile responsiveness, additional Tailwind responsive classes would need to be added.
+Updated: December 2025
+```
 
