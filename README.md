@@ -2,10 +2,6 @@
 
 A modern, interactive quiz application built with Next.js, TypeScript, and Tailwind CSS. This application features smooth animations, accessibility compliance, and a pixel-perfect design implementation.
 
-## 🚀 Live Demo
-
-[Deploy to Vercel/Netlify and add URL here]
-
 ## 📋 Features
 
 - **Interactive Quiz Interface**: Navigate through multiple-choice questions with smooth transitions
