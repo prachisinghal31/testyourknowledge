@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: linear-gradient(135deg, #BECFEE 0%, #71C6E2 50%, #D9F4FA 75%, #BECFEE 100%);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(200px);
+    -webkit-backdrop-filter: blur(200px);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    position: relative;
+    z-index: 20;
+    background-color: #F4FDFF;
+    backdrop-filter: blur(200px);
+    -webkit-backdrop-filter: blur(200px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  }
+
+  /* aurora layer placed between page background and the white card */
+  .aurora-layer {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: 10;
+    background: linear-gradient(135deg, #BECFEE 0%, #71C6E2 50%, #D9F4FA 75%, #BECFEE 100%);
+    filter: blur(10px);
+    opacity: 0.95;
+    pointer-events: none;
+  }
+  
+  .title-gradient {
+    background: linear-gradient(135deg, #15313D 0%, #3CABDA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .question-gradient {
+    background: linear-gradient(180deg, #C6E9F7 0%, #E5F8FF 100%);
+  }
+
+  /* Option states: default white, show gentle gradient on hover, and stronger when selected */
+  .option-default {
+    background: #ffffff;
+    color: #0f1724;
+    border: 1px solid #E8F4F8;
+  }
+
+  .option-gradient-0:hover,
+  .option-gradient-0.selected {
+    background: linear-gradient(180deg, #F4FBFF 0%, #E8F7FB 100%);
+    border-color: #96E5FF;
+    box-shadow: 0 6px 18px rgba(16, 60, 80, 0.04);
+  }
+
+  .option-gradient-1:hover,
+  .option-gradient-1.selected {
+    background: linear-gradient(180deg, #EEF9FC 0%, #DFF3FA 100%);
+    border-color: #96E5FF;
+    box-shadow: 0 6px 18px rgba(16, 60, 80, 0.04);
+  }
+
+  .option-gradient-2:hover,
+  .option-gradient-2.selected {
+    background: linear-gradient(180deg, #E6F6FB 0%, #D6EEF6 100%);
+    border-color: #96E5FF;
+    box-shadow: 0 6px 18px rgba(16, 60, 80, 0.04);
+  }
+
+  .option-selected {
+    border-color: #96E5FF;
+  }
+  
+  .progress-dash {
+    @apply h-0.5 w-12;
+  }
+}
+
